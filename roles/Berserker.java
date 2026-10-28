@@ -1,5 +1,6 @@
 package roles;
 
+// half advantage against all classes  x(1.5)
 public class Berserker extends Roles{
         public Berserker(){
         this.maxHealth = 300;

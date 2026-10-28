@@ -1,4 +1,7 @@
 package roles;
+
+// full advantage against assassin x(2.0), half advantage against berserker  x(1.5)
+// disadvantage against rider x(0.5), no advantage against other classes x(1.0)
 public class Mage extends Roles {
     public Mage(){
         this.maxHealth = 250;
