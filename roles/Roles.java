@@ -16,6 +16,9 @@ public abstract class Roles implements Affinity {
     public void healCalculation(double amount){
         health += amount;
     }
+    public double getMaxHealth(){
+        return maxHealth;
+    }
     public double getHealth(){
         return health;
     }

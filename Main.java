@@ -46,14 +46,33 @@ public class Main {
                 System.out.print("Choose : ");
                 int p1 = sc.nextInt();
                 int p2 = (int)(Math.random() * 3 ) + 1;
-                Battle.BattlePhase(p1, p2, turn);
+                double damage = Battle.BattlePhase(p1, p2, turn, player1, player2);
+                if(p1 == 2 && p2 == 2){
+                    player1.getRole().damageCalculation(damage);
+                    System.out.println("You receive " + damage + " damage!");
+                    System.out.println("Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth());
+                }else{
+                    player2.getRole().damageCalculation(damage);
+                    System.out.println("You dealt " + damage + " damage!");
+                    System.out.println("Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth());
+                }
+                
             }else{
                 System.out.println("Enemy's turn");
                 System.out.println("1.) Guard \n2.) Counter \n3.) Barrier");
                 System.out.print("Choose : ");
                 int p1 = sc.nextInt();
                 int p2 = (int)(Math.random() * 3 ) + 1;
-                Battle.BattlePhase(p2, p1, turn);
+                double damage = Battle.BattlePhase(p2, p1, turn, player1, player2);
+                if(p1 == 2 && p2 == 2){
+                    player2.getRole().damageCalculation(damage);
+                    System.out.println("You dealt " + damage + " damage!");
+                    System.out.println("Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth());
+                }else{
+                    player1.getRole().damageCalculation(damage);
+                    System.out.println("You receive " + damage + " damage!");
+                    System.out.println("Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth());
+                }
             }
             turn++;
         }
