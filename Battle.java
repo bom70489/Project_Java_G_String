@@ -1,16 +1,26 @@
 public class Battle {
-    static void BattlePhase(int p1 , int p2){
+    static void BattlePhase(int p1 , int p2 , int turn){
+        String attacker;
+        String defender;
+        if(turn % 2 == 1){
+            attacker = "You";
+            defender = "Enemy";
+        }
+        else{
+            attacker = "Enemy";
+            defender = "You";
+        }
         
         // Attack 1.Attack 2.Strike 3.Magic
-        if(p1 % 3 == 1) System.out.println("Attacker use attack!");
-        else if(p1 % 3 == 2) System.out.println("Attacker use strike!");
-        else if(p1 % 3 == 0) System.out.println("Attacker use magic!");
+        if(p1 % 3 == 1) System.out.println(attacker + " use attack!");
+        else if(p1 % 3 == 2) System.out.println(attacker + " use strike!");
+        else if(p1 % 3 == 0) System.out.println(attacker + " use magic!");
 
 
         // Defence 1.Guard 2.Counter 3.Barrier
-        if(p2 % 3== 1) System.out.println("Defender use guard!");
-        else if(p2 % 3 == 2) System.out.println("Defender use counter!");
-        else if(p2 % 3 == 0) System.out.println("Defender use barrier!");
+        if(p2 % 3== 1) System.out.println(defender + " use guard!");
+        else if(p2 % 3 == 2) System.out.println(defender + " use counter!");
+        else if(p2 % 3 == 0) System.out.println(defender + " use barrier!");
 
 
         if(p1 % 3 == 1){ // P1 choose Attack

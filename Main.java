@@ -5,6 +5,10 @@ import roles.*;
 public class Main {
     static Roles select(int number){
         Player player = new Player();
+        if(number < 1 || number > 7){
+            System.out.println("invalid input your role will be randomly select"); 
+            number = (int)(Math.random() * 7 ) + 1;
+        }
         switch (number){
             case 1 : player.setRole(new Warrior()); break;
             case 2 : player.setRole(new Archer()); break;
@@ -13,6 +17,7 @@ public class Main {
             case 5 : player.setRole(new Assassin()); break;
             case 6 : player.setRole(new Mage()); break;
             case 7 : player.setRole(new Berserker()); break;
+            default : break;
         }
         return player.getRole();
     }
@@ -21,7 +26,7 @@ public class Main {
         System.out.print("Please input your name : ");
         Player player1 = new Player(sc.nextLine());
         System.out.println("------- Classes -------");
-        System.out.println("1.Warrior \n2.Archer \n3.Lancer \n4.Rider \n5.Assassin \n6.Mage \n7.Berserker");
+        System.out.println("1.) Warrior \n2.) Archer \n3.) Lancer \n4.) Rider \n5.) Assassin \n6.) Mage \n7.) Berserker");
         System.out.print("\nSelect your class : ");
         player1.setRole(select(sc.nextInt()));
         System.out.println();
@@ -34,23 +39,24 @@ public class Main {
         System.out.println("------- Battle Phase -------");
         int turn = 1 ;
         while(player1.getRole().getHealth() > 0 && player2.getRole().getHealth() > 0){
-            System.out.println("------- " + turn + " -------");
+            System.out.println("------- turn " + turn + " -------");
             if(turn % 2 == 1){
                 System.out.println("Your turn");
-                System.out.println("1.Attack \n2.Strike \n3.Magic");
+                System.out.println("1.) Attack \n2.) Strike \n3.) Magic");
                 System.out.print("Choose : ");
                 int p1 = sc.nextInt();
                 int p2 = (int)(Math.random() * 3 ) + 1;
-                Battle.BattlePhase(p1, p2);
+                Battle.BattlePhase(p1, p2, turn);
             }else{
                 System.out.println("Enemy's turn");
-                System.out.println("1.Guard \n2.Counter \n3.Barrier");
+                System.out.println("1.) Guard \n2.) Counter \n3.) Barrier");
                 System.out.print("Choose : ");
                 int p1 = sc.nextInt();
                 int p2 = (int)(Math.random() * 3 ) + 1;
-                Battle.BattlePhase(p2, p1);
+                Battle.BattlePhase(p2, p1, turn);
             }
             turn++;
         }
+        sc.close();
     }
 }

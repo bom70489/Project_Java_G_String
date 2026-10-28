@@ -1,5 +1,3 @@
-import roles.*;
-
 public class Player extends Character{    
     private int level;
 
