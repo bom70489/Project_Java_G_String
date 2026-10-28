@@ -1,54 +1,45 @@
-import roles.All_Roles;
+import roles.*;
 
-class Player {    
-    private All_Roles role_Player;
+public class Player {    
+    private Roles role_Player;
     private String name_Player;
-    private String sword;
-    private int damage = 0;
-    Player() {
+    private int level;
+    public Player() {
         this.name_Player = "Unknown";
-        this.sword = "Unknown";
-        this.damage = 0;
+        this.level = 1;
+    }
+    public Player(String name){
+        this.name_Player = name;
+        this.level = 1;
     }
     
-    void setName(String name) {
+    public void setName(String name) {
         this.name_Player = name;
     }
 
-    String getName() {
+    public String getName() {
         return name_Player;
     }
     
-    void setRole(All_Roles role) {
+    public void setRole(Roles role) {
         this.role_Player = role;
     }
-
-    void setSword(String sword , int damage) {
-        
+    public Roles getRole() {
+        return role_Player;
     }
-
-    private void level() {
-        int level = 1;
-        System.out.print("------- Level " + level + " -------");
-        System.out.println();
+    public int getLevel(){
+        return level;
     }
-
-    private void getRolesStatus() {
-        System.out.println("------- Roles Status -------");
-        role_Player.showStutus();
+    public void setLevel(int level){
+        this.level = level;
     }
 
     void showInfo() {
-        level();
+        System.out.print("------- Level " + getLevel() + " -------");
+        System.out.println();
         System.out.println("Name : " + this.name_Player);
-
-        // out When player not select
-        if(this.role_Player == null) {
-            System.out.println("Please select role");
-            return;
-        }
-
         System.out.println("Role : " + this.role_Player.getRoleName()); 
-        getRolesStatus();
+        System.out.println("------- Roles Status -------");
+        role_Player.showStutus();
     }
 }

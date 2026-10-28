@@ -1,21 +1,30 @@
 package roles;
-public class Mage extends All_Roles {
-    private int hp = 125;
-    private int atk = 25;
-    
+public class Mage extends Roles {
+    public Mage(){
+        this.health = 250;
+        this.attack = 20;
+        this.defence = 30;
+        this.magic = 100;
+        this.magic_resist = 30;
+        this.speed = 20;
+    }
     @Override 
     public String getRoleName() {
         return "Mage";
     }
 
     @Override 
-    public int getDamage() {
-        return atk;
+    public double getDamage() {
+        return magic;
     }
-
+    
     @Override 
     public void showStutus() {
-        System.out.println("Hp : " + hp);
-        System.out.println("Attack : " + atk);
+        System.out.println("Hp : " + health);
+        System.out.println("Attack : " + attack);
+        System.out.println("Defence : " + defence);
+        System.out.println("Magic : " + magic);
+        System.out.println("Magic_resistance : " + magic_resist);
+        System.out.println("Speed : " + speed);
     }
 }
