@@ -2,6 +2,7 @@ package roles;
 
 public class Archer extends Roles {
     public Archer(){
+        this.maxHealth = 250;
         this.health = 250;
         this.attack = 75;
         this.defence = 20;
@@ -21,11 +22,18 @@ public class Archer extends Roles {
     
     @Override 
     public void showStutus() {
-        System.out.println("Hp : " + health);
+        System.out.println("Hp : " + health + " / " + maxHealth);
         System.out.println("Attack : " + attack);
         System.out.println("Defence : " + defence);
         System.out.println("Magic : " + magic);
         System.out.println("Magic_resistance : " + magic_resist);
         System.out.println("Speed : " + speed);
+    }
+    public void levelUp(){
+        this.maxHealth += 10;
+        this.attack += 20;
+        this.defence += 5;
+        this.magic += 10;
+        this.magic_resist += 5;
     }
 }

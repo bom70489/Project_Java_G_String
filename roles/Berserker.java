@@ -2,6 +2,7 @@ package roles;
 
 public class Berserker extends Roles{
         public Berserker(){
+        this.maxHealth = 300;
         this.health = 300;
         this.attack = 80;
         this.defence = 25;
@@ -21,11 +22,17 @@ public class Berserker extends Roles{
     
     @Override 
     public void showStutus() {
-        System.out.println("Hp : " + health);
+        System.out.println("Hp : " + health + " / " + maxHealth);
         System.out.println("Attack : " + attack);
         System.out.println("Defence : " + defence);
         System.out.println("Magic : " + magic);
         System.out.println("Magic_resistance : " + magic_resist);
         System.out.println("Speed : " + speed);
+    }
+    public void levelUp(){
+        this.maxHealth += 25;
+        this.attack += 15;
+        this.defence += 5;
+        this.magic_resist += 5;
     }
 }
