@@ -16,11 +16,6 @@ public class Mage extends Status {
     public String getRoleName() {
         return "Mage";
     }
-
-    @Override 
-    public double getDamage() {
-        return magic;
-    }
     
     @Override 
     public void showStutus() {

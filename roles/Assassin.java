@@ -16,11 +16,6 @@ public class Assassin extends Status {
     public String getRoleName() {
         return "Assassin";
     }
-
-    @Override 
-    public double getDamage() {
-        return attack;
-    }
     
     @Override 
     public void showStutus() {

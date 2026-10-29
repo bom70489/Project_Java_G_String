@@ -16,11 +16,6 @@ public class Warrior extends Status {
     public String getRoleName() {
         return "Warrior";
     }
-
-    @Override 
-    public double getDamage() {
-        return attack;
-    }
     
     @Override 
     public void showStutus() {

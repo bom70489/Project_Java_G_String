@@ -15,13 +15,7 @@ public class Archer extends Status {
     @Override 
     public String getRoleName() {
         return "Archer";
-    }
-
-    @Override 
-    public double getDamage() {
-        return attack;
-    }
-    
+    } 
     @Override 
     public void showStutus() {
         System.out.println("Hp : " + health + " / " + maxHealth);

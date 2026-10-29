@@ -15,12 +15,6 @@ public class Berserker extends Status{
     public String getRoleName() {
         return "Berserker";
     }
-
-    @Override 
-    public double getDamage() {
-        return attack;
-    }
-    
     @Override 
     public void showStutus() {
         System.out.println("Hp : " + health + " / " + maxHealth);

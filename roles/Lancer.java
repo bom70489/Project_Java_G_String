@@ -16,12 +16,6 @@ public class Lancer extends Status {
     public String getRoleName() {
         return "Lancer";
     }
-
-    @Override 
-    public double getDamage() {
-        return attack;
-    }
-    
     @Override 
     public void showStutus() {
         System.out.println("Hp : " + health + " / " + maxHealth);
