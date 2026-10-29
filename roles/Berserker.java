@@ -1,6 +1,6 @@
 package roles;
 
-// half advantage against all classes  x(1.5)
+// Half Advantage against all classes x(1.25)
 public class Berserker extends Status{
         public Berserker(){
         this.maxHealth = 300;
@@ -35,5 +35,9 @@ public class Berserker extends Status{
         this.attack += 15;
         this.defence += 5;
         this.magic_resist += 5;
+    }
+    public double checkAdvantage(Status role){
+        System.out.print("It's Half advantage! ");
+        return HALF_ADVANTAGE; // 1.5x against all classes
     }
 }

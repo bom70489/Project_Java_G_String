@@ -11,7 +11,11 @@ public abstract class Status implements Affinity {
     protected double speed;
 
     public void damageCalculation(double amount){
-        health -= amount;
+        if(amount >= health){
+            health = 0;
+        }else{
+            health -= amount;
+        }
     }
     public void healCalculation(double amount){
         health += amount;
@@ -55,4 +59,5 @@ public abstract class Status implements Affinity {
     public abstract double getDamage();
     public abstract void showStutus();
     public abstract void levelUp();
+    public abstract double checkAdvantage(Status role);
 }

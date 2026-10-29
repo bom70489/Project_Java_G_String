@@ -1,7 +1,7 @@
 package roles;
 
-// full advantage against archer x(2.0), half advantage against berserker  x(1.5)
-// disadvantage against warrior x(0.5), no advantage against other classes x(1.0)
+// full advantage against archer and berserker x(1.5)
+// disadvantage against warrior x(0.75), no advantage against other classes x(1.0)
 public class Lancer extends Status {
     public Lancer(){
         this.maxHealth = 280;
@@ -37,5 +37,19 @@ public class Lancer extends Status {
         this.defence += 7.5;
         this.magic += 7.5;
         this.magic_resist += 7.5;
+    }
+    public double checkAdvantage(Status role){
+        switch(role.getRoleName()){
+            case "Archer" : 
+            case "Berserker" : 
+                System.out.print("It's Full advantage! ");
+                return FULL_ADVANTAGE;
+            case "Warrior" : 
+                System.out.print("It's Disadvantage! ");
+                return DISADVANTAGE;
+            default : 
+                System.out.print("No advantage. ");
+                return NO_ADVANTAGE;
+        }
     }
 }

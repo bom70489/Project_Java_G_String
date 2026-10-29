@@ -52,10 +52,10 @@ public class Battle {
             if(p1 % 3 == 1){ // P1 choose Attack
                 if(p2 % 3 == 1){
                     System.out.println("Attack got blocked"); // P2 guard - blocked
-                    return Math.max(1.0,(enemy.getRole().getAttack() * 0.75)-player.getRole().getDefence());
+                    return Math.max(1.0,(enemy.getRole().getAttack() * 0.25)-player.getRole().getDefence());
                 }else{
                     System.out.println("Attack Successfully!"); // P2 not guard - success
-                    return Math.max(1.0,(enemy.getRole().getAttack() * 0.25)-player.getRole().getDefence());
+                    return Math.max(1.0,(enemy.getRole().getAttack() * 1)-player.getRole().getDefence());
                 }
             }else if(p1 % 3 == 2){ // P1 choose Strike
                 if(p2 % 3 == 2){
@@ -63,7 +63,7 @@ public class Battle {
                     return Math.max(1.0,(player.getRole().getAttack() * 1.5)-enemy.getRole().getDefence());
                 }else{
                     System.out.println("Strike Successfully!"); // P2 not counter - success
-                    return Math.max(1.0,(enemy.getRole().getAttack() * 1.25)-player.getRole().getDefence());
+                    return Math.max(1.0,(enemy.getRole().getAttack() * 1.5)-player.getRole().getDefence());
                 }
             }else if(p1 % 3 == 0){ // P1 choose Magic
                 if(p2 % 3 == 0){
@@ -71,7 +71,7 @@ public class Battle {
                     return 0;
                 }else{
                     System.out.println("Magic Successfully cast!"); // P2 not barrier - success
-                    return Math.max(1.0,(enemy.getRole().getMagic() * 1) - player.getRole().getMagicResistance());
+                    return Math.max(1.0,(enemy.getRole().getMagic() * 1.25) - player.getRole().getMagicResistance());
                 }
             }
         }

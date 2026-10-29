@@ -30,10 +30,12 @@ public class Main {
                 int p2 = (int)(Math.random() * 3 ) + 1;
                 double damage = Battle.BattlePhase(p1, p2, turn, player1, player2);
                 if(p1 == 2 && p2 == 2){
+                    damage *= player2.getRole().checkAdvantage(player1.getRole()); // calculate class's advantage enemy to player
                     player1.getRole().damageCalculation(damage);
                     System.out.println("You receive " + damage + " damage!");
                     System.out.println("Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth());
                 }else{
+                    damage *= player1.getRole().checkAdvantage(player2.getRole()); // calculate class's advantage player to enemy
                     player2.getRole().damageCalculation(damage);
                     System.out.println("You dealt " + damage + " damage!");
                     System.out.println("Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth());
@@ -47,14 +49,21 @@ public class Main {
                 int p2 = (int)(Math.random() * 3 ) + 1;
                 double damage = Battle.BattlePhase(p2, p1, turn, player1, player2);
                 if(p1 == 2 && p2 == 2){
+                    damage *= player1.getRole().checkAdvantage(player2.getRole()); // calculate class's advantage player to enemy
                     player2.getRole().damageCalculation(damage);
                     System.out.println("You dealt " + damage + " damage!");
                     System.out.println("Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth());
                 }else{
+                    damage *= player2.getRole().checkAdvantage(player1.getRole()); // calculate class's advantage enemy to player
                     player1.getRole().damageCalculation(damage);
                     System.out.println("You receive " + damage + " damage!");
                     System.out.println("Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth());
                 }
+            }
+            if(player1.getRole().getHealth() == 0){
+                System.out.println("You lost...");
+            }else if(player2.getRole().getHealth() == 0){
+                System.out.println("You win!");
             }
             turn++;
         }
