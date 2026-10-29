@@ -1,7 +1,7 @@
 import roles.*;
 
 public abstract class Character {
-    protected Roles role_Player;
+    protected Status role_Player;
     protected String name_Player;
 
     public void setName(String name) {
@@ -10,10 +10,10 @@ public abstract class Character {
     public String getName() {
         return name_Player;
     }
-    public void setRole(Roles role) {
+    public void setRole(Status role) {
         this.role_Player = role;
     }
-    public Roles getRole() {
+    public Status getRole() {
         return role_Player;
     }
 

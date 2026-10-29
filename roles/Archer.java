@@ -3,7 +3,7 @@ package roles;
 
 // full advantage against warrior x(2.0), half advantage against berserker  x(1.5)
 // disadvantage against lancer x(0.5), no advantage against other classes x(1.0)
-public class Archer extends Roles {
+public class Archer extends Status {
     public Archer(){
         this.maxHealth = 250;
         this.health = 250;

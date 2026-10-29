@@ -3,24 +3,6 @@ import java.util.Scanner;
 import roles.*;
 
 public class Main {
-    static Roles select(int number){
-        Player player = new Player();
-        if(number < 1 || number > 7){
-            System.out.println("invalid input your role will be randomly select"); 
-            number = (int)(Math.random() * 7 ) + 1;
-        }
-        switch (number){
-            case 1 : player.setRole(new Warrior()); break;
-            case 2 : player.setRole(new Archer()); break;
-            case 3 : player.setRole(new Lancer()); break;
-            case 4 : player.setRole(new Rider()); break;
-            case 5 : player.setRole(new Assassin()); break;
-            case 6 : player.setRole(new Mage()); break;
-            case 7 : player.setRole(new Berserker()); break;
-            default : break;
-        }
-        return player.getRole();
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Please input your name : ");
@@ -28,12 +10,12 @@ public class Main {
         System.out.println("------- Classes -------");
         System.out.println("1.) Warrior \n2.) Archer \n3.) Lancer \n4.) Rider \n5.) Assassin \n6.) Mage \n7.) Berserker");
         System.out.print("\nSelect your class : ");
-        player1.setRole(select(sc.nextInt()));
+        player1.setRole(Status.selectRole(sc.nextInt()));
         System.out.println();
         player1.showInfo();
         int random = (int)(Math.random() * 7 ) + 1; // random from 1-7
         Enemy player2 = new Enemy();
-        player2.setRole(select(random));
+        player2.setRole(Status.selectRole(random));
         System.out.println("\n------- Your enemy -------");
         player2.showInfo();
         System.out.println("------- Battle Phase -------");

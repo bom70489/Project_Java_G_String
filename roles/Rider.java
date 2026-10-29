@@ -2,7 +2,7 @@ package roles;
 
 // full advantage against mage x(2.0), half advantage against berserker  x(1.5)
 // disadvantage against assassin x(0.5), no advantage against other classes x(1.0)
-public class Rider extends Roles{
+public class Rider extends Status{
         public Rider(){
         this.maxHealth = 275;
         this.health = 275;

@@ -1,4 +1,4 @@
-import roles.Roles;
+import roles.Status;
 
 public class Enemy extends Character{
 
@@ -9,10 +9,10 @@ public class Enemy extends Character{
         this.name_Player += roleName + diff; //enemy name change according to diffeculty 
     }
     
-    public void setRole(Roles role) {
+    public void setRole(Status role) {
         this.role_Player = role;
     }
-    public Roles getRole() {
+    public Status getRole() {
         return role_Player;
     }
     

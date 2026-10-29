@@ -1,7 +1,7 @@
 package roles;
 import Affinity_interface.Affinity;
 
-public abstract class Roles implements Affinity {
+public abstract class Status implements Affinity {
     protected double maxHealth;
     protected double health;
     protected double attack;
@@ -33,6 +33,22 @@ public abstract class Roles implements Affinity {
     }
     public double getMagicResistance(){
         return magic_resist;
+    }
+    public static Status selectRole(int number){
+        if(number < 1 || number > 7){
+            System.out.println("invalid input your role will be randomly select"); //if input not 1-7
+            number = (int)(Math.random() * 7 ) + 1; // random from 1 to 7
+        }
+        switch (number){
+            case 1 : return new Warrior();
+            case 2 : return new Archer();
+            case 3 : return new Lancer();
+            case 4 : return new Rider();
+            case 5 : return new Assassin();
+            case 6 : return new Mage();
+            case 7 : return new Berserker();
+            default : return new Warrior(); //default warrior
+        }
     }
 
     public abstract String getRoleName();
