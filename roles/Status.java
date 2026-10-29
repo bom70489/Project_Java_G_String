@@ -19,6 +19,9 @@ public abstract class Status implements Affinity {
     }
     public void healCalculation(double amount){
         health += amount;
+        if(health > maxHealth){
+            health = maxHealth;
+        }
     }
     public double getMaxHealth(){
         return maxHealth;

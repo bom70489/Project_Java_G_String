@@ -1,5 +1,3 @@
-import roles.Status;
-
 public class Enemy extends Character{
 
     public Enemy(){
@@ -7,13 +5,6 @@ public class Enemy extends Character{
     }
     public Enemy(String roleName , String diff){
         this.name_Player += roleName + diff; //enemy name change according to diffeculty 
-    }
-    
-    public void setRole(Status role) {
-        this.role_Player = role;
-    }
-    public Status getRole() {
-        return role_Player;
     }
     
     public void showInfo() {

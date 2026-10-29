@@ -45,10 +45,10 @@ public class Battle {
             }else if(p1 % 3 == 2){ // P1 choose Strike
                 if(p2 % 3 == 2){
                     System.out.println("Counter Attack!"); // P2 counter - counter attack
-                    return Math.max(1.0, (playerAtk * 0.75) + (playerMagic * 0.75) - (playerDefence * 0.5) - (playerMagicResist * 0.5));
+                    return Math.max(1.0, (playerAtk * 1) + (playerMagic * 0.75) - (playerDefence * 0.5) - (playerMagicResist * 0.5));
                 }else{
                     System.out.println("Strike Successfully!"); // P2 not counter - success
-                    return Math.max(1.0, (playerAtk * 0.75) + (playerMagic * 0.75) - (enemyDefence * 0.5) - (enemyMagicResist * 0.5));
+                    return Math.max(1.0, (playerAtk * 1) + (playerMagic * 0.75) - (enemyDefence * 0.5) - (enemyMagicResist * 0.5));
                 }
             }else if(p1 % 3 == 0){ // P1 choose Magic
                 if(p2 % 3 == 0){
@@ -71,10 +71,10 @@ public class Battle {
             }else if(p1 % 3 == 2){ // P1 choose Strike
                 if(p2 % 3 == 2){
                     System.out.println("Counter Attack!"); // P2 counter - counter attack
-                    return Math.max(1.0, (enemyAtk * 0.75) + (enemyMagic * 0.75) - (enemyDefence * 0.5) - (enemyMagicResist * 0.5));
+                    return Math.max(1.0, (enemyAtk * 1) + (enemyMagic * 0.75) - (enemyDefence * 0.5) - (enemyMagicResist * 0.5));
                 }else{
                     System.out.println("Strike Successfully!"); // P2 not counter - success
-                    return Math.max(1.0, (enemyAtk * 0.75) + (enemyMagic * 0.75) - (playerDefence * 0.5) - (playerMagicResist * 0.5));
+                    return Math.max(1.0, (enemyAtk * 1) + (enemyMagic * 0.75) - (playerDefence * 0.5) - (playerMagicResist * 0.5));
                 }
             }else if(p1 % 3 == 0){ // P1 choose Magic
                 if(p2 % 3 == 0){
