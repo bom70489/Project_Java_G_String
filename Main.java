@@ -12,15 +12,17 @@ public class Main {
         System.out.print("\nSelect your class : ");
         player1.setRole(Status.selectRole(sc.nextInt()));
         System.out.println();
+        int input = 0;
+        int takedown = 0;
+        int potion = 3;
+        int maxPotion = 3;
+        do{
         int random = (int)(Math.random() * 7 ) + 1; // random from 1-7
         Enemy player2 = new Enemy();
         player2.setRole(Status.selectRole(random));
-        System.out.println("\n------- Your enemy -------");
+        System.out.println("\n------ Your next enemy -------");
         player2.showInfo();
         int turn = 1 ;
-        int potion = 3;
-        int maxPotion = 3;
-        int input;
         while(player1.getRole().getHealth() > 0 && player2.getRole().getHealth() > 0){
             System.out.println("----------- Turn " + turn + " -----------");
             if(turn % 2 == 1){
@@ -30,8 +32,8 @@ public class Main {
                     System.out.print("Choose : ");
                     input = sc.nextInt();
                     if(input == 2){
-                        player1.getRole().healCalculation(player1.getRole().getMaxHealth() * 0.3);
-                        System.out.println("You healed " + player1.getRole().getMaxHealth() * 0.3);
+                        player1.getRole().healCalculation(player1.getRole().getMaxHealth() * 0.5);
+                        System.out.println("You healed " + player1.getRole().getMaxHealth() * 0.5);
                         System.out.println("------------------------------");
                         System.out.println("Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth());
                         System.out.println("------------------------------");
@@ -53,6 +55,8 @@ public class Main {
                         }
                     }else if(input == 4){
                         System.out.println("You surrender.");
+                        System.out.println("---------Final Score----------");
+                        System.out.println("You have taken down " + takedown + " enemies");
                         return;
                     }
                 }while(input != 1);
@@ -113,12 +117,22 @@ public class Main {
                 }
             }
             if(player1.getRole().getHealth() == 0){
-                System.out.println("You lose to AI...");
+                System.out.println("You lose");
+                System.out.println("---------Final Score----------");
+                System.out.println("You have taken down " + takedown + " enemies");
+                return;
             }else if(player2.getRole().getHealth() == 0){
-                System.out.println("You win!");
+                System.out.println("You takedown an enemy");
+                System.out.println("----------Level up!!----------");
+                System.out.println("You heal by 30% of your max Hp");
+                player1.getRole().levelUp();
+                player1.levelUp();
+                player1.getRole().healCalculation(player1.getRole().getMaxHealth() * 0.3);
+                takedown++;
             }
             turn++;
         }
+    }while(input != 4);
         sc.close();
     }
 }
