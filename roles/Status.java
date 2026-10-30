@@ -23,6 +23,7 @@ public abstract class Status implements Affinity {
             health = maxHealth;
         }
     }
+
     public double getMaxHealth(){
         return maxHealth;
     }
@@ -41,8 +42,12 @@ public abstract class Status implements Affinity {
     public double getMagicResistance(){
         return magic_resist;
     }
+    public double getSpeed() {
+        return speed;
+    }
+
     public static Status selectRole(int number){
-        if(number < 1 || number > 7){
+        if((number < 1 || number > 7) && number != 67){
             System.out.println("invalid input your role will be randomly select"); //if input not 1-7
             number = (int)(Math.random() * 7 ) + 1; // random from 1 to 7
         }
@@ -54,6 +59,7 @@ public abstract class Status implements Affinity {
             case 5 : return new Assassin();
             case 6 : return new Mage();
             case 7 : return new Berserker();
+            case 67 : return new Skibidi();
             default : return new Warrior(); //default warrior
         }
     }

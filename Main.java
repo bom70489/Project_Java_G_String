@@ -126,7 +126,7 @@ public class Main {
                 System.out.println("----------Level up!!----------");
                 System.out.println("You heal by 30% of your max Hp");
                 player1.getRole().levelUp();
-                player1.levelUp();
+                player1.levelUpPlayer();
                 player1.getRole().healCalculation(player1.getRole().getMaxHealth() * 0.3);
                 takedown++;
             }
