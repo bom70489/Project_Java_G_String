@@ -3,7 +3,7 @@ package mode;
 public class GameMode implements Mode {
     public static double selectMode(int number) {
         if(number < 1 || number > 3){
-            System.out.println("invalid input your role will be randomly select"); //if input not 1-3
+            System.out.println("invalid input your mode will be randomly select"); //if input not 1-3
             number = (int)(Math.random() * 3 ) + 1; // random from 1 to 3
         }
         switch (number) {
