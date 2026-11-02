@@ -1,5 +1,4 @@
 package mode;
-import Interface.Mode;
 
 public class GameMode implements Mode {
     public static double selectMode(int number) {

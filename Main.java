@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import character.Enemy;
+import character.Player;
 import mode.GameMode;
 import roles.*;
 

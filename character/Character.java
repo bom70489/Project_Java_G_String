@@ -1,3 +1,4 @@
+package character;
 import roles.*;
 
 public abstract class Character {

@@ -1,4 +1,4 @@
-package Interface;
+package mode;
 
 public interface Mode {
     public static final double EASY = 1.0;

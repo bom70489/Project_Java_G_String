@@ -1,6 +1,5 @@
 package roles;
-import Interface.Affinity;
-import Interface.Mode;
+import mode.Mode;
 
 public abstract class Status implements Affinity , Mode {
     protected double maxHealth;

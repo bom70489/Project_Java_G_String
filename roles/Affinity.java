@@ -1,4 +1,4 @@
-package Interface;
+package roles;
 
 public interface Affinity {
     public static final double FULL_ADVANTAGE = 1.5;
@@ -7,5 +7,4 @@ public interface Affinity {
     public static final double DISADVANTAGE = 0.75;
     public void damageCalculation(double amount);
     public void healCalculation(double amount);
-
 }
