@@ -4,7 +4,7 @@ public class Enemy extends Character{
         this.name_Player = "Toto"; //defalut name Toto
     }
     public Enemy(String roleName , String diff){
-        this.name_Player += roleName + diff; //enemy name change according to diffeculty 
+        this.name_Player = roleName + diff; //enemy name change according to diffeculty 
     }
     
     public void showInfo() {

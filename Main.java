@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import mode.GameMode;
 import roles.*;
 
 public class Main {
@@ -16,13 +16,27 @@ public class Main {
         int takedown = 0;
         int potion = 3;
         int maxPotion = 3;
+
+        // select Mode
+        System.out.println("------- Select Mode -------");
+        System.out.println("1.) Easy \n2.) Medium \n3.) Hard");
+        System.out.print("Enter Your mode: ");
+        double gameDifficulty = GameMode.selectMode(sc.nextInt());
+        System.out.println("Difficulty multiplier: " + gameDifficulty);
+
         do{
-        int random = (int)(Math.random() * 7 ) + 1; // random from 1-7
-        Enemy player2 = new Enemy();
-        player2.setRole(Status.selectRole(random));
-        System.out.println("\n------ Your next enemy -------");
-        player2.showInfo();
-        int turn = 1 ;
+            // Random
+            int random = (int)(Math.random() * 7 ) + 1; // random from 1-7
+            Enemy player2 = new Enemy();
+            player2.setRole(Status.selectRole(random));
+
+            // Mode
+            player2.getRole().gameMode(gameDifficulty);
+
+            // Show Info
+            int turn = 1 ;
+            System.out.println("\n------ Your enemy -------");
+            player2.showInfo();
         while(player1.getRole().getHealth() > 0 && player2.getRole().getHealth() > 0){
             System.out.println("----------- Turn " + turn + " -----------");
             if(turn % 2 == 1){

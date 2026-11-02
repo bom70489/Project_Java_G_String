@@ -13,6 +13,7 @@ public abstract class Character {
     public void setRole(Status role) {
         this.role_Player = role;
     }
+    
     public Status getRole() {
         return role_Player;
     }
