@@ -1,7 +1,7 @@
 package roles;
-import Affinity_interface.Affinity;
+import mode.Mode;
 
-public abstract class Status implements Affinity {
+public abstract class Status implements Affinity , Mode {
     protected double maxHealth;
     protected double health;
     protected double attack;
@@ -62,6 +62,13 @@ public abstract class Status implements Affinity {
             case 67 : return new Skibidi();
             default : return new Warrior(); //default warrior
         }
+    }
+
+    public void gameMode(double multiplier) {
+        maxHealth = (int) (maxHealth * multiplier);
+        health = (int) (health * multiplier);
+        defence = (int) (defence * multiplier);
+        magic_resist = (int) (magic_resist * multiplier);
     }
 
     public abstract String getRoleName();

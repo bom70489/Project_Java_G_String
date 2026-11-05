@@ -1,3 +1,6 @@
+import character.Enemy;
+import character.Player;
+
 public class Battle {
     static double BattlePhase(int p1 , int p2 , int turn, Player player, Enemy enemy){
         String attacker;
