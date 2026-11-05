@@ -23,7 +23,7 @@ public class Main {
 
         // select Mode
         System.out.println("------- Select Mode -------");
-        System.out.println("1.) Easy \n2.) Medium \n3.) Hard");
+        System.out.println(Colours.GREEN + "1.) Easy" + Colours.ORANGE + "\n2.) Medium" + Colours.RED + "\n3.) Hard" + Colours.RESET);
         System.out.print("Enter Your mode: ");
         double gameDifficulty = GameMode.selectMode(sc.nextInt());
         System.out.println("Difficulty multiplier: " + gameDifficulty);
@@ -93,7 +93,7 @@ public class Main {
                     System.out.println("------------------------------");
                     System.out.println(Colours.GREEN + "Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth() + Colours.RED);
                     System.out.println("------------------------------");
-                    System.out.println(Colours.GREEN + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RED);
+                    System.out.println(Colours.DARK_RED + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RED);
                     System.out.println("------------------------------");
                 }else{
                     damage *= player1.getRole().checkAdvantage(player2.getRole()); // calculate class's advantage player to enemy
@@ -102,7 +102,7 @@ public class Main {
                     System.out.println("------------------------------");
                     System.out.println(Colours.GREEN + "Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth() + Colours.RESET);
                     System.out.println("------------------------------");
-                    System.out.println(Colours.RED + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RESET);
+                    System.out.println(Colours.DARK_RED + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RESET);
                     System.out.println("------------------------------");
                 }
                 
@@ -121,7 +121,7 @@ public class Main {
                     System.out.println("------------------------------");
                     System.out.println(Colours.GREEN + "Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth() + Colours.RESET);
                     System.out.println("------------------------------");
-                    System.out.println(Colours.RED + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RESET);
+                    System.out.println(Colours.DARK_RED + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RESET);
                     System.out.println("------------------------------");
                 }else{
                     damage *= player2.getRole().checkAdvantage(player1.getRole()); // calculate class's advantage enemy to player
@@ -130,7 +130,7 @@ public class Main {
                     System.out.println("------------------------------");
                     System.out.println(Colours.GREEN + "Your Hp : " + player1.getRole().getHealth() + " / " + player1.getRole().getMaxHealth() + Colours.RESET);
                     System.out.println("------------------------------");
-                    System.out.println(Colours.RED + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RESET);
+                    System.out.println(Colours.DARK_RED + "Enemy Hp : " + player2.getRole().getHealth() + " / " + player2.getRole().getMaxHealth() + Colours.RESET);
                     System.out.println("------------------------------");
                 }
             }
